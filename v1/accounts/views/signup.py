@@ -5,10 +5,12 @@ from django.http import JsonResponse
 from django.contrib.auth.models import User
 from django.views.decorators.csrf import csrf_exempt
 from v1.accounts.models import Profile
+from v1.wallet.models import Wallet
 from v1.accounts.validators.regvalidator import (
     check_username,
     check_email
 )
+
 
 @csrf_exempt
 def signup_view(req):
@@ -29,6 +31,7 @@ def signup_view(req):
             jwt_token = jwt_token.decode('utf-8')
             # Create User Profile
             Profile(user=new_user).save()
+            Wallet(owner=new_user).save()
             return JsonResponse({
                         'token':jwt_token,
                         'username':new_user.username

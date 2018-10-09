@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'v1.accounts',
     'v1.app',
+    'v1.wallet',
     'corsheaders'
 ]
 

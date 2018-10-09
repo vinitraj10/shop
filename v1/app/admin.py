@@ -1,8 +1,12 @@
 from django.contrib import admin
 from v1.app.models import (
     Store,
-    LoyalityProgram
+    Product,
+    BoughtBy,
+    Review
 )
-# Register your models here.
+
 admin.site.register(Store)
-admin.site.register(LoyalityProgram)
+admin.site.register(Product)
+admin.site.register(BoughtBy)
+admin.site.register(Review)
