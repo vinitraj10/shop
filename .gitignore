@@ -1,0 +1,22 @@
+# Base
+*.sqlite3
+.DS_Store
+.idea
+.vscode
+env
+__pycache__
+
+# Migrations
+**/migrations/*
+!**/migrations/__init__.py
+
+# Application
+config/environment.py
+config/settings/development.py
+config/settings/production.py
+media/*
+
+# Client
+node_modules/
+package-lock.json
+
