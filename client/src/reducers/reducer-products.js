@@ -1,6 +1,7 @@
 import {
   FETCHED_PRODUCTS,
-  FETCHING_PRODUCTS
+  FETCHING_PRODUCTS,
+  UNAUTH_USER,
 } from '../actions/types';
 
 const initialState = {
@@ -15,6 +16,8 @@ export default function (state = initialState, action) {
       return { fetching: true, fetched: false, products: null };
     case FETCHED_PRODUCTS:
       return { fetching: false, fetched: true, products: action.payload };
+    case UNAUTH_USER:
+			return initialState;
     default:
       return state;
   }

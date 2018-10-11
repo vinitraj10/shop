@@ -5,7 +5,8 @@ import { loadCart } from '../../actions/app';
 
 class CartLink extends Component {
   componentDidMount() {
-    this.props.loadCart();
+    const { username } = this.props.auth;
+    this.props.loadCart(username);
   }
   render() {
     const { products } = this.props.cart;
@@ -28,7 +29,8 @@ class CartLink extends Component {
 
 function mapStateToProps(state) {
   return {
-    cart: state.cart
+    cart: state.cart,
+    auth: state.auth
   };
 }
 

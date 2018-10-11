@@ -8,8 +8,9 @@ import { Main } from './components';
 import { AUTH_USER } from './actions/types';
 
 const token = localStorage.getItem('token');
+const username = localStorage.getItem('username');
 if (token) {
-	store.dispatch({ type: AUTH_USER });
+	store.dispatch({ type: AUTH_USER, payload: username });
 }
 
 const rootDiv = document.getElementById('root');

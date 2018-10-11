@@ -1,6 +1,7 @@
 import {
   FETCHED_STORES,
-  FETCHING_STORES
+  FETCHING_STORES,
+  UNAUTH_USER
 } from '../actions/types';
 
 const initialState = {
@@ -15,6 +16,8 @@ export default function (state = initialState, action) {
       return { fetching: true, fetched: false, stores: null };
     case FETCHED_STORES:
       return { fetching: false, fetched: true, stores: action.payload };
+    case UNAUTH_USER:
+      return initialState;
     default:
       return state;
   }

@@ -1,18 +1,15 @@
-import {
-  ENROLL,
-  UNAUTH_USER
-} from '../actions/types';
+import { LOAD_PROFILE, UNAUTH_USER } from '../actions/types';
 
 const initialState = {
-  enrolled: false
+  profile: null
 };
 
 export default function (state = initialState, action) {
   switch (action.type) {
-    case ENROLL:
-      return { enrolled: true };
+    case LOAD_PROFILE:
+      return { profile: action.payload };
     case UNAUTH_USER:
-			return initialState;
+      return initialState;
     default:
       return state;
   }

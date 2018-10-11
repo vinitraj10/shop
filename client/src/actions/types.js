@@ -12,3 +12,8 @@ export const ENROLL = 'ENROLL';
 
 export const ADD_TO_CART = 'ADD_TO_CART';
 export const LOAD_CART = 'LOAD_CART';
+
+export const LOAD_TRANSACTIONS = 'LOAD_TRANSACTIONS';
+export const LOAD_PROFILE = 'LOAD_PROFILE';
+
+export const LOAD_REVIEW = 'LOAD_REVIEW';

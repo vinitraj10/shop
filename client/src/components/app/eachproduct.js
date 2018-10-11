@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { addToCart } from '../../actions/app';
 import './css/app.css';
 
@@ -32,9 +33,9 @@ class EachProduct extends Component {
               </button>
             </div>
             <div className="options">
-              <button className="btn btn-primary">
+              <Link to={`/product/${product.id}`} className="btn btn-primary">
                 View Now
-              </button>
+              </Link>
             </div>
           </div>
         </div>

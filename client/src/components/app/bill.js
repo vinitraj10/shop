@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { buyNow } from '../../actions/app';
 
 class Bill extends Component {
+  buy() {
+    this.props.buyNow(this.props.products, () => {
+      this.props.history.push('/mytransactions');
+    });
+  }
   render() {
     let price = 0;
     let i = 0;
@@ -15,8 +23,8 @@ class Bill extends Component {
             <h2 className="text-center text-gray"> ₹ {price}</h2>
           </div>
           <div className="panel-footer">
-            <button onClick={this.checkout} className="btn btn-success">
-              checkout
+            <button onClick={this.buy.bind(this)} className="btn btn-success">
+              Buy Now
             </button>
           </div>
         </div>
@@ -25,4 +33,6 @@ class Bill extends Component {
   }
 }
 
-export default Bill;
+Bill = withRouter(Bill);
+
+export default connect(null, { buyNow })(Bill);

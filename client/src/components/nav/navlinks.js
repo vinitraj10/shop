@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import CartLink from './cartlink';
+import ProfileLink from './profilelink';
 
 class NavLinks extends Component {
   handleLogout() {
@@ -13,13 +14,17 @@ class NavLinks extends Component {
     if (authenticated) {
       return (
         <section className="navbar-section">
+          <ProfileLink />
+          <Link to="/mytransactions" className="btn btn-link link">
+            My orders
+          </Link>
+          <CartLink />
           <a
             onClick={this.handleLogout.bind(this)}
             className="btn btn-link link"
           >
             Logout
           </a>
-          <CartLink />
         </section>
       );
     }
@@ -33,5 +38,6 @@ class NavLinks extends Component {
 }
 
 NavLinks = withRouter(NavLinks);
+
 
 export default NavLinks;

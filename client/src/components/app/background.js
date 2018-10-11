@@ -5,7 +5,7 @@ import { enroll } from '../../actions/app';
 class Background extends Component {
   enrollNow() {
     const username = localStorage.getItem('username');
-    this.props.enroll(username,this.props.lid);
+    this.props.enroll(username, this.props.lid);
   }
   render() {
     console.log(this.props);

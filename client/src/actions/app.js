@@ -6,7 +6,10 @@ import {
   FETCHED_PRODUCTS,
   ENROLL,
   ADD_TO_CART,
-  LOAD_CART
+  LOAD_CART,
+  LOAD_TRANSACTIONS,
+  LOAD_PROFILE,
+  LOAD_REVIEW
 } from './types';
 
 import { tokenHeader } from '../utils/headers';
@@ -68,8 +71,7 @@ export function addToCart(username, productId) {
   };
 }
 
-export function loadCart() {
-  const username = localStorage.getItem('username');
+export function loadCart(username) {
   const URL = `${ROOT_URL}app/api/loadcart/${username}/`;
   const request = axios.get(URL, tokenHeader());
   return (dispatch) => {
@@ -79,13 +81,73 @@ export function loadCart() {
   };
 }
 
-export function removeFromCart(cartId) {
-  const username = localStorage.getItem('username');
+export function removeFromCart(cartId, username) {
   const URL = `${ROOT_URL}app/api/removefromcart/${cartId}/${username}`;
   const request = axios.delete(URL, tokenHeader());
   return (dispatch) => {
     request.then((response) => {
       dispatch({ type: LOAD_CART, payload: response.data });
+    });
+  };
+}
+
+
+export function buyNow(data, callback) {
+  const postData = {
+    data
+  };
+  const URL = `${ROOT_URL}app/api/buynow/`;
+  const request = axios.post(URL, postData, tokenHeader());
+  return (dispatch) => {
+    request.then((response) => {
+      dispatch({ type: LOAD_CART, payload: response.data });
+      callback();
+    });
+  };
+}
+
+export function loadMyTransactions(username) {
+  const URL = `${ROOT_URL}app/api/loadmytransactions/${username}`;
+  const request = axios.get(URL, tokenHeader());
+  return (dispatch) => {
+    request.then((response) => {
+      dispatch({ type: LOAD_TRANSACTIONS, payload: response.data });
+    });
+  };
+}
+
+export function loadProfile(username) {
+  console.log(username);
+  const URL = `${ROOT_URL}accounts/api/profile/${username}`;
+  console.log(URL);
+  const request = axios.get(URL, tokenHeader());
+  return (dispatch) => {
+    request.then((response) => {
+      dispatch({ type: LOAD_PROFILE, payload: response.data });
+    });
+  };
+}
+
+export function addReview(data, productId, callback) {
+  const username = localStorage.getItem('username');
+  data['username'] = username;
+  data['productId'] = productId;
+  const URL = `${ROOT_URL}app/api/add_review/`;
+  const request = axios.post(URL, data, tokenHeader());
+  return (dispatch) => {
+    request.then((response) => {
+      dispatch({ type: 'REVIEWED' });
+      callback();
+    });
+  };
+}
+
+export function loadReview(productId) {
+  const URL = `${ROOT_URL}app/api/loadreview/${productId}`;
+  const request = axios.get(URL, tokenHeader());
+  return (dispatch) => {
+    request.then((response) => {
+      dispatch({ type: LOAD_REVIEW, payload: response.data });
     });
   };
 }

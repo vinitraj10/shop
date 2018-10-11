@@ -5,6 +5,7 @@ import {
 
 const initialState = {
 	authenticated: false,
+	username: '',
 	loginError: null,
 	signupError: null
 };
@@ -12,9 +13,9 @@ const initialState = {
 export default function (state = initialState, action) {
 	switch (action.type) {
 		case AUTH_USER:
-			return { ...state, authenticated: true };
+			return { ...state, authenticated: true, username: action.payload };
 		case UNAUTH_USER:
-			return { ...state, authenticated: false };
+			return initialState;
     default:
       return state;
     }

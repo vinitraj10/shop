@@ -1,6 +1,16 @@
 import React, { Component } from 'react';
 import { Route, withRouter, Switch } from 'react-router-dom';
-import { Signin, Signup, Cart, Store, ViewStore } from '../components';
+import {
+		Signin,
+		Signup,
+		Cart,
+		Store,
+		ViewStore,
+		Mytransactions,
+		Review,
+		Profile,
+		ViewProduct
+} from '../components';
 import requireAuth from '../components/hoc/authenticate';
 
 class Routes extends Component {
@@ -13,6 +23,10 @@ class Routes extends Component {
 				<Route path="/signup" component={Signup} />
 				<Route path="/store/:id" component={requireAuth(ViewStore)} />
 				<Route path="/cart" component={requireAuth(Cart)} />
+				<Route path="/mytransactions" component={requireAuth(Mytransactions)} />
+				<Route path="/add/review/:id" component={requireAuth(Review)} />
+				<Route path="/profile" component={requireAuth(Profile)} />
+				<Route path='/product/:id' component={ViewProduct} />
 			</Switch>
 		);
 	}

@@ -19,13 +19,12 @@ class CartProducts extends Component {
               {product.product_name}
               <p className="tile-subtitle text-gray"> ₹ {product.price}</p>
             </h6>
-
           </div>
           <div className="tile-action">
             <button
               className="btn btn-error"
               onClick={
-                  () => this.props.removeFromCart(product.id)
+                  () => this.props.removeFromCart(product.id,this.props.username)
                 }
             >
               Remove

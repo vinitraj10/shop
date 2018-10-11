@@ -6,16 +6,17 @@ import CartProducts from './cartproducts';
 
 class Cart extends Component {
   componentDidMount() {
-    this.props.loadCart();
+    this.props.loadCart(this.props.auth.username);
   }
   render() {
     const { products } = this.props.cart;
+    const { username } = this.props.auth;
     let count;
     if (products) {
       count = products.inCart.length;
       if (count > 0) {
         return (
-          <CartProducts products={products.inCart} />
+          <CartProducts products={products.inCart} username={username} />
         );
       }
       return (
@@ -38,7 +39,8 @@ class Cart extends Component {
 
 function mapStateToProps(state) {
   return {
-    cart: state.cart
+    cart: state.cart,
+    auth: state.auth
   };
 }
 

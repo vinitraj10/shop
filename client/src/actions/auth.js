@@ -13,9 +13,10 @@ export function signup(formValue, callback) {
 		.then((response) => {
 			const { username } = response.data;
 			const { token } = response.data;
-			dispatch({ type: AUTH_USER });
+			console.log(token);
 			localStorage.setItem('token', token);
 			localStorage.setItem('username', username);
+			dispatch({ type: AUTH_USER, payload: username });
 			callback();
 		})
 		.catch(() => {
@@ -32,9 +33,9 @@ export function signin(formValue, callback) {
 		.then((response) => {
       const { token } = response.data;
 			const { username } = response.data;
-			dispatch({ type: AUTH_USER });
 			localStorage.setItem('token', token);
 			localStorage.setItem('username', username);
+			dispatch({ type: AUTH_USER, payload: username });
 			callback();
 		})
 		.catch(() => {
