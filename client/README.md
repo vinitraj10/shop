@@ -2,7 +2,7 @@
 
 ### Here are the instructions for setting up the client of the project
 
-<strong>npm required</strong>
+<strong>Node-Js required </strong>
 
 **Strep-1** :- <p>Move in Directory</p>
 ```
