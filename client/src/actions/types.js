@@ -7,3 +7,5 @@ export const FETCHED_STORES = 'FETCHED_STORES';
 
 export const FETCHING_PRODUCTS = 'FETCHING_PRODUCTS';
 export const FETCHED_PRODUCTS = 'FETCHED_PRODUCTS';
+
+export const ENROLL = 'ENROLL';

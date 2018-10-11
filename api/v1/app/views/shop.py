@@ -8,7 +8,10 @@ from v1.app.models import (
     Product,
     BoughtBy
 )
-from v1.wallet.models import Wallet
+from v1.wallet.models import (
+    Wallet,
+    LoyalityProgram
+)
 from v1.accounts.validators.authenticate import (
     verify_auth,
 )
@@ -59,7 +62,18 @@ def get_products(req,pk):
     if(verify_auth(token)):
         if req.method=='GET':
             store = Store.objects.get(pk=pk)
+            store_pic = store.picture.url
+            store_name = store.name
+            store_desc = store.description
             product_list = list(Product.objects.filter(store=store).values())
+            loyalty = LoyalityProgram.objects.get(store=store)
+            for each in product_list:
+                each['store_pic'] = store_pic
+                each['store_name'] = store_name
+                each['store_desc'] = store_desc
+                each['loyalty'] = loyalty.name
+                each['loyalty_disc'] = loyalty.discount
+                each['loyalty_id'] = loyalty.id
             return JsonResponse({'products':product_list})
         
         else:

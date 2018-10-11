@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { getProducts } from '../../actions/app';
 import Loading from './loading';
 import EachProduct from './eachproduct';
+import Background from './background';
 
 class ViewStore extends Component {
   componentDidMount() {
@@ -18,8 +19,22 @@ class ViewStore extends Component {
         <Loading />
       );
     } else if (fetched) {
+      const storeName = products.products[0].store_name;
+      const loyalty = products.products[0].loyalty;
+      const loyaltyDisc = products.products[0].loyalty_disc;
+      const lid = products.products[0].loyalty_id;
       return (
-        <EachProduct products={products} />
+        <React.Fragment>
+          <div className="column col-12">
+            <Background
+              name={storeName}
+              lpg={loyalty}
+              lpgd={loyaltyDisc}
+              lid={lid}
+            />
+          </div>
+          <EachProduct products={products} />
+        </React.Fragment>
       );
     }
     return (

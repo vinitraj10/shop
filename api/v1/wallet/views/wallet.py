@@ -1,8 +1,10 @@
 import json
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.models import User
 from v1.wallet.models import (
-    MyLoyalityProgram
+    MyLoyality,
+    LoyalityProgram
 )
 from v1.accounts.validators.authenticate import (
     verify_auth
@@ -17,11 +19,11 @@ def enroll_in_loyality(req):
         except:
             return JsonResponse({'error':'Please login first'})
         if(verify_auth(token)):
-            loyality_id = data['loyality_id']
+            loyaltyId = data['loyaltyId']
             username = data['username']
-            loyality = LoyalityProgram.objects.get(pk=loyality_id)
+            loyality = LoyalityProgram.objects.get(pk=loyaltyId)
             user = User.objects.get(username=username)
-            MyLoyalityProgram.objects.create(user=user,loyality=loyality)
+            MyLoyality.objects.create(user=user,loyality=loyality)
             return JsonResponse({"message":"Enrolled successfully"},status=200)
     else:
         return JsonResponse({"message":"Method not allowed"},status=405)

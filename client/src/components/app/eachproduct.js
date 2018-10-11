@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import './css/app.css';
 
 class EachProduct extends Component {
@@ -19,9 +18,16 @@ class EachProduct extends Component {
           </div>
 
           <div className="card-footer">
-            <button className="btn btn-primary">
-              Buy Now
-            </button>
+            <div className="options">
+              <button className="btn btn-primary">
+                Add to Cart
+              </button>
+            </div>
+            <div className="options">
+              <button className="btn btn-primary">
+                View Now
+              </button>
+            </div>
           </div>
         </div>
       </div>
