@@ -1,4 +1,4 @@
-## This is Clientside of the shop project given in capgemini full stack hackathon challenge
+## Client-Side of the shop project given in Capgemini full stack hackathon challenge
 
 ### Here are the instructions for setting up the client of the project
 
