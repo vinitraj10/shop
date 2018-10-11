@@ -4,7 +4,9 @@ import {
   FETCHED_STORES,
   FETCHING_PRODUCTS,
   FETCHED_PRODUCTS,
-  ENROLL
+  ENROLL,
+  ADD_TO_CART,
+  LOAD_CART
 } from './types';
 
 import { tokenHeader } from '../utils/headers';
@@ -37,7 +39,6 @@ export function getProducts(pk) {
   };
 }
 
-
 export function enroll(username, loyaltyId) {
   const data = {
     username, loyaltyId
@@ -49,6 +50,42 @@ export function enroll(username, loyaltyId) {
     request.then((response) => {
       console.log(response);
       dispatch({ type: ENROLL });
+    });
+  };
+}
+
+export function addToCart(username, productId) {
+  const data = {
+    username, productId
+  };
+  const URL = `${ROOT_URL}app/api/addtocart/`;
+  const request = axios.post(URL, data, tokenHeader());
+
+  return (dispatch) => {
+    request.then((response) => {
+      dispatch({ type: ADD_TO_CART, payload: response.data });
+    });
+  };
+}
+
+export function loadCart() {
+  const username = localStorage.getItem('username');
+  const URL = `${ROOT_URL}app/api/loadcart/${username}/`;
+  const request = axios.get(URL, tokenHeader());
+  return (dispatch) => {
+    request.then((response) => {
+      dispatch({ type: LOAD_CART, payload: response.data });
+    });
+  };
+}
+
+export function removeFromCart(cartId) {
+  const username = localStorage.getItem('username');
+  const URL = `${ROOT_URL}app/api/removefromcart/${cartId}/${username}`;
+  const request = axios.delete(URL, tokenHeader());
+  return (dispatch) => {
+    request.then((response) => {
+      dispatch({ type: LOAD_CART, payload: response.data });
     });
   };
 }

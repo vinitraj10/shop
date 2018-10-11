@@ -11,7 +11,7 @@ class Routes extends Component {
 				<Route exact path="/" component={requireAuth(Store)} />
 				<Route path="/signin" component={Signin} />
 				<Route path="/signup" component={Signup} />
-				<Route path = "/store/:id" component = {requireAuth(ViewStore)} />
+				<Route path="/store/:id" component={requireAuth(ViewStore)} />
 				<Route path="/cart" component={requireAuth(Cart)} />
 			</Switch>
 		);

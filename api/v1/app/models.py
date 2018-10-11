@@ -39,3 +39,10 @@ class Review(models.Model):
     
     def __str__(self):
         return str(self.user.username) + " " + str(self.product.product_name)
+
+class Cart(models.Model):
+    product = models.ForeignKey(Product,on_delete=models.CASCADE)
+    owner = models.ForeignKey(User,on_delete=models.CASCADE)
+
+    def __str__(self):
+        return str(self.owner.username) + " " + str(self.product.product_name)

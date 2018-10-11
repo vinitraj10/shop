@@ -28,7 +28,6 @@ class EachStore extends Component {
   }
   render() {
     const { data } = this.props.stores.data;
-    console.log(data);
     return (
       <React.Fragment>
         {data.map(this.renderEach.bind(this))}

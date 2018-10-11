@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { getProducts } from '../../actions/app';
 import Loading from './loading';
 import EachProduct from './eachproduct';
@@ -19,22 +20,35 @@ class ViewStore extends Component {
         <Loading />
       );
     } else if (fetched) {
-      const storeName = products.products[0].store_name;
-      const loyalty = products.products[0].loyalty;
-      const loyaltyDisc = products.products[0].loyalty_disc;
-      const lid = products.products[0].loyalty_id;
+      if (products.products.length > 0) {
+        const storeName = products.products[0].store_name;
+        const loyalty = products.products[0].loyalty;
+        const loyaltyDisc = products.products[0].loyalty_disc;
+        const lid = products.products[0].loyalty_id;
+        return (
+          <React.Fragment>
+            <div className="column col-12">
+              <Background
+                name={storeName}
+                lpg={loyalty}
+                lpgd={loyaltyDisc}
+                lid={lid}
+              />
+            </div>
+            <EachProduct products={products} />
+          </React.Fragment>
+        );
+      }
       return (
-        <React.Fragment>
-          <div className="column col-12">
-            <Background
-              name={storeName}
-              lpg={loyalty}
-              lpgd={loyaltyDisc}
-              lid={lid}
-            />
+        <div className="column col-12">
+            <div className="empty">
+              <p className="empty-title h5">Store has No Items Yet</p>
+              <p className="empty-subtitle">See other Stores.</p>
+              <div className="empty-action">
+                <Link to="/" className="btn btn-primary">Go to stores</Link>
+              </div>
+            </div>
           </div>
-          <EachProduct products={products} />
-        </React.Fragment>
       );
     }
     return (

@@ -8,6 +8,7 @@ class Background extends Component {
     this.props.enroll(username,this.props.lid);
   }
   render() {
+    console.log(this.props);
     return (
       <React.Fragment>
         <h1 className="text-center">

@@ -9,3 +9,6 @@ export const FETCHING_PRODUCTS = 'FETCHING_PRODUCTS';
 export const FETCHED_PRODUCTS = 'FETCHED_PRODUCTS';
 
 export const ENROLL = 'ENROLL';
+
+export const ADD_TO_CART = 'ADD_TO_CART';
+export const LOAD_CART = 'LOAD_CART';

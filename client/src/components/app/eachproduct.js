@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { addToCart } from '../../actions/app';
 import './css/app.css';
 
 class EachProduct extends Component {
-
+  HandleaddToCart(productId) {
+    const username = localStorage.getItem('username');
+    this.props.addToCart(username, productId);
+  }
   renderEach(product) {
     const imgUrl = `http://localhost:8000/media/${product.product_pic}`;
 
@@ -19,7 +24,10 @@ class EachProduct extends Component {
 
           <div className="card-footer">
             <div className="options">
-              <button className="btn btn-primary">
+              <button
+                className="btn btn-primary"
+                onClick={this.HandleaddToCart.bind(this, product.id)}
+              >
                 Add to Cart
               </button>
             </div>
@@ -43,4 +51,4 @@ class EachProduct extends Component {
   }
 }
 
-export default EachProduct;
+export default connect(null, { addToCart })(EachProduct);

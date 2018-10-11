@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import CartLink from './cartlink';
 
 class NavLinks extends Component {
   handleLogout() {
@@ -18,6 +19,7 @@ class NavLinks extends Component {
           >
             Logout
           </a>
+          <CartLink />
         </section>
       );
     }

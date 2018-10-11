@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
-const Logout = (props) => (
-  <section className="navbar-section">
-    <a onClick={props.logout} className="btn btn-link link">Logout</a>
-  </section>
-);
+class Logout extends Component {
+  render() {
+    return (
+        <section className="navbar-section">
+          <a onClick={this.props.logout} className="btn btn-link link">
+            fjhfjh
+          </a>
+          <Link to="/cart">Cart</Link>
+        </section>
+    );
+  }
+}
 
 export default Logout;
