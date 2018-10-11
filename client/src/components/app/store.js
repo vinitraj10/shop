@@ -1,7 +1,29 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { getStores } from '../../actions/app';
+import Loading from './loading';
+import EachStore from './eachstore';
 
-const Store = () => (
-  <h1>Store</h1>
-);
+class Store extends Component {
+  componentDidMount() {
+    this.props.getStores();
+  }
+  render() {
+    const { fetched } = this.props.stores;
+    const { fetching } = this.props.stores;
+    const { stores } = this.props.stores
+    return (
+      <React.Fragment>
+      { fetching ? (<Loading />) : ( fetched ? (<EachStore stores={stores} />) : (''))}
+      </React.Fragment>
+    );
+  }
+}
 
-export default Store;
+
+function mapStateToProps(state) {
+  return {
+    stores: state.stores
+  };
+}
+export default connect(mapStateToProps, { getStores })(Store);

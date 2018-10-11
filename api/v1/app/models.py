@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 class Store(models.Model):
     name = models.CharField(max_length=50)
     picture = models.FileField(upload_to='store_pic/')
+    description = models.TextField()
 
     def __str__(self):
         return str(self.name)

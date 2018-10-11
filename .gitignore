@@ -13,7 +13,7 @@ __pycache__
 config/environment.py
 config/settings/development.py
 config/settings/production.py
-media/*
+api/media/*
 
 # Client
 node_modules/

@@ -1,37 +1,37 @@
 import axios from 'axios';
 import {
 	AUTH_USER,
-	UNAUTH_USER,
+	UNAUTH_USER
 } from './types';
 
 const ROOT_URL = 'http://localhost:8000/accounts/api/';
 
 export function signup(formValue, callback) {
-	const URL = `${ROOT_URL}register/`;
+	const URL = `${ROOT_URL}auth/signup/`;
 	return (dispatch) => {
 		axios.post(URL, formValue)
 		.then((response) => {
 			const { username } = response.data;
-			console.log(username);
-			dispatch({ type: SIGNUP_USER });
-			localStorage.setItem('token', response.data.token);
+			const { token } = response.data;
+			dispatch({ type: AUTH_USER });
+			localStorage.setItem('token', token);
 			localStorage.setItem('username', username);
 			callback();
 		})
-		.catch((error) => {
-			dispatch({ type: AUTH_ERROR, payload: 'ERROR OCCURED USERNAME MAY EXISTS IN DATABASE' });
+		.catch(() => {
+			//
 		});
 	};
 }
 
 export function signin(formValue, callback) {
 	const URL = `${ROOT_URL}auth/signin/`;
-  const req = axios.post(URL, formValue);
 	return (dispatch) => {
     console.log(formValue);
-		req.then((response) => {
-      const { token } = response.data.token;
-			const { username } = response.data.username;
+		axios.post(URL, formValue)
+		.then((response) => {
+      const { token } = response.data;
+			const { username } = response.data;
 			dispatch({ type: AUTH_USER });
 			localStorage.setItem('token', token);
 			localStorage.setItem('username', username);

@@ -15,7 +15,7 @@ class Signin extends Component {
   render() {
     const { handleSubmit } = this.props;
     return (
-      <div className="columns content">
+      <React.Fragment>
         <div className="column col-4" />
         <div className="column col-4">
           <form onSubmit={handleSubmit(this.formSubmit.bind(this))}>
@@ -26,7 +26,7 @@ class Signin extends Component {
             </div>
           </form>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }

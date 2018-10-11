@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route, withRouter, Switch } from 'react-router-dom';
-import { Signin, Signup, Cart, Store } from '../components';
+import { Signin, Signup, Cart, Store, ViewStore } from '../components';
 import requireAuth from '../components/hoc/authenticate';
 
 class Routes extends Component {
@@ -11,6 +11,7 @@ class Routes extends Component {
 				<Route exact path="/" component={requireAuth(Store)} />
 				<Route path="/signin" component={Signin} />
 				<Route path="/signup" component={Signup} />
+				<Route path = "/store/:id" component = {requireAuth(ViewStore)} />
 				<Route path="/cart" component={requireAuth(Cart)} />
 			</Switch>
 		);

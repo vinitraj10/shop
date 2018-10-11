@@ -3,16 +3,20 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
 import { renderInput } from '../../utils/redux-form-fields';
+import { signup } from '../../actions/auth';
+
 import './css/auth.css';
 
 class Signup extends Component {
   formSubmit(formValue) {
-    console.log(formValue);
+    this.props.signup(formValue, () => {
+      this.props.history.push('/');
+    });
   }
   render() {
     const { handleSubmit } = this.props;
     return (
-      <div className="columns content">
+      <React.Fragment>
         <div className="column col-4" />
         <div className="column col-4">
           <form onSubmit={handleSubmit(this.formSubmit.bind(this))}>
@@ -26,7 +30,7 @@ class Signup extends Component {
             <Field
               component={renderInput}
               type="text"
-              name="Email"
+              name="email"
               label="Email"
             />
             <div className="form-group">
@@ -34,7 +38,7 @@ class Signup extends Component {
             </div>
           </form>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }
@@ -45,4 +49,4 @@ Signup = reduxForm({
 	fields: ['username', 'password', 'email']
 })(Signup);
 
-export default connect(null)(Signup);
+export default connect(null, { signup })(Signup);

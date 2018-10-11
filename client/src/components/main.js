@@ -10,7 +10,7 @@ const Main = () => (
       </div>
 
     </div>
-    <div className="container">
+    <div className="columns app-content">
       <Routes />
     </div>
   </div>
