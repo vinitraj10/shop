@@ -10,9 +10,7 @@
 3. Set Up Client .
 ```
 
-1.) ```
-git clone https://github.com/vinitraj10/shop
-```
+1.) <code>git clone https://github.com/vinitraj10/shop </code>
 
 
 2.)
