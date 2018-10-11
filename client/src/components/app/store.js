@@ -14,7 +14,7 @@ class Store extends Component {
     const { stores } = this.props.stores
     return (
       <React.Fragment>
-      { fetching ? (<Loading />) : ( fetched ? (<EachStore stores={stores} />) : (''))}
+      { fetching ? (<Loading />) : (fetched ? (<EachStore stores={stores} />) : (''))}
       </React.Fragment>
     );
   }

@@ -10,7 +10,12 @@ class ProfileLink extends Component {
   render() {
     const { profile } = this.props.profile;
     if (profile) {
-      const imgUrl = `http://localhost:8000${profile.propic}`;
+      let imgUrl = '';
+      if (profile.propic !== '') {
+        imgUrl = `http://localhost:8000${profile.propic}`;
+      } else {
+        imgUrl = 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/128/profile-icon.png';
+      }
       return (
         <Link to="/profile">
           <figure className="avatar avatar-lg">

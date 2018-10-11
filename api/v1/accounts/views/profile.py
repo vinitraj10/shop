@@ -18,7 +18,7 @@ def load_profile(req,username):
             try:
                 propic = profile.picture.url
             except:
-                propic = 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/128/profile-icon.png'
+                propic = ''
             wallet = Wallet.objects.get(owner=user).money
             data = {
                 'username':user.username,

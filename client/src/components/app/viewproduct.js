@@ -8,7 +8,12 @@ class ViewProduct extends Component {
   }
 
   renderEach(review) {
-    const imgUrl = `http://localhost:8000${review.profile_pic}`
+    let imgUrl = '';
+    if (review.profile_pic !== '') {
+      imgUrl = `http://localhost:8000${review.profile_pic}`;
+    } else {
+      imgUrl = 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/128/profile-icon.png';
+    }
     return (
       <div className="column col-12" key={review.id}>
         <div className="tile">

@@ -32,6 +32,7 @@ def buy_product(req):
             data = json.loads(req.body)
             cartProducts = data['data']
             for each in cartProducts:
+                print(each)
                 product_id = each['product_id']
                 user_id = each['owner_id']
                 store_id = each['store_id']
@@ -117,6 +118,15 @@ def add_to_cart(req):
             user = User.objects.get(username=username)
             Cart.objects.create(owner=user,product=product)
             cartList = list(Cart.objects.filter(owner=user).values())
+            for each in cartList:
+                product_id = each['product_id']
+                product = Product.objects.get(pk=product_id)
+                each['product_name'] = product.product_name
+                each['product_pic'] = product.product_pic.url
+                each['store'] = product.store.name
+                each['store_id'] = product.store.id
+                each['price'] = product.price
+                each['description'] = product.description
             return JsonResponse({'inCart':cartList},status=200)
         else:
             return JsonResponse({'error':'Method not allowed'},status=405)
@@ -226,7 +236,10 @@ def load_review(req,id):
             for each in reviews:
                 user = User.objects.get(pk=each['user_id'])
                 profile = Profile.objects.get(user=user)
-                each['profile_pic'] = profile.picture.url
+                try:
+                    each['profile_pic'] = profile.picture.url
+                except:
+                    each['profile_pic'] = ''
                 each['username'] = user.username
             return JsonResponse({'data':reviews},status=200)
         return JsonResponse({'error':'Please Login first'},status=401)
