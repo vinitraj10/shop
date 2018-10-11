@@ -10,10 +10,10 @@
 3. Set Up Client .
 ```
 
-1.)
-```
+1.) ```
 git clone https://github.com/vinitraj10/shop
 ```
+
 
 2.)
 [API-readme](https://github.com/vinitraj10/shop/blob/master/api/README.md)
