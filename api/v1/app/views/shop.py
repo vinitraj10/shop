@@ -74,7 +74,7 @@ def get_products(req,pk):
     try:
         token = req.META['HTTP_AUTHORIZATION']
     except:
-        return JsonResponse({'error':'Please login first'},status=401)
+        return JsonResponse({'error':'Please Login first'},status=401)
     if(verify_auth(token)):
         if req.method=='GET':
             store = Store.objects.get(pk=pk)
@@ -93,14 +93,14 @@ def get_products(req,pk):
                     each['loyalty'] = loyalty.name
                     each['loyalty_disc'] = loyalty.discount
                     each['loyalty_id'] = loyalty.id
-                return JsonResponse({'products':product_list})
+                return JsonResponse({'products':product_list},status=200)
             except:
-                return JsonResponse({'products':product_list})
+                return JsonResponse({'products':product_list},status=200)
         
         else:
             return JsonResponse({'error':'Method not allowed'},status=405)
     else:
-        return JsonResponse({'error':'Please login first'})
+        return JsonResponse({'error':'Please login first'},status=401)
 
 
 @csrf_exempt
@@ -108,7 +108,7 @@ def add_to_cart(req):
     try:
         token = req.META['HTTP_AUTHORIZATION']
     except:
-        return JsonResponse({'error': 'Please login first'})
+        return JsonResponse({'error': 'Please login first'},status=401)
     if(verify_auth(token)):
         if req.method == 'POST':
             data = json.loads(req.body)
