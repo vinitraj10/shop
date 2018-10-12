@@ -6,7 +6,7 @@ import { buyNow } from '../../actions/app';
 class Bill extends Component {
   buy() {
     this.props.buyNow(this.props.products, () => {
-      this.props.history.push('/mytransactions');
+      this.props.history.push('/myorders');
     });
   }
   render() {
