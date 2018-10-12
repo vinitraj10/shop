@@ -7,6 +7,7 @@ import cartReducer from './reducer-cart';
 import transactionReducer from './reducer-transactions';
 import profileReducer from './reducer-profile';
 import reviewReducer from './reducer-reviews';
+import loyaltyReducer from './reducer-loyalty';
 
 const rootReducer = combineReducers({
   auth: authReducer,
@@ -16,7 +17,8 @@ const rootReducer = combineReducers({
   cart: cartReducer,
   transactions: transactionReducer,
   profile: profileReducer,
-  review: reviewReducer
+  review: reviewReducer,
+  loyalty: loyaltyReducer
 });
 
 

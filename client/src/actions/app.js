@@ -52,7 +52,17 @@ export function enroll(username, loyaltyId) {
   return (dispatch) => {
     request.then((response) => {
       console.log(response);
-      dispatch({ type: ENROLL });
+      dispatch({ type: ENROLL, payload: response.data.value });
+    });
+  };
+}
+
+export function checkEnrollment(loyality, username) {
+  const URL = `${ROOT_URL}wallet/api/checkenrollment/${loyality}/${username}/`;
+  const request = axios.get(URL, tokenHeader());
+  return (dispatch) => {
+    request.then((response) => {
+      dispatch({ type: ENROLL, payload: response.data.value });
     });
   };
 }
@@ -136,6 +146,7 @@ export function addReview(data, productId, callback) {
   const request = axios.post(URL, data, tokenHeader());
   return (dispatch) => {
     request.then((response) => {
+      console.log(response);
       dispatch({ type: 'REVIEWED' });
       callback();
     });

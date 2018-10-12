@@ -11,12 +11,12 @@
   padding: 10px;
 }
 
-.tile {
+.tile-new {
   border: 1px solid #ddd;
   padding: 15px;
 }
 
-.tile-content {
+.tile-padding {
   padding:10px;
 }
 
@@ -31,4 +31,8 @@
 
 .same-line{
   display: inline;
+}
+
+.space {
+  margin-left:5px;
 }

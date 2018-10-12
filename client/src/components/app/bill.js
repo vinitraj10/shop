@@ -19,7 +19,7 @@ class Bill extends Component {
     }
     cashback = (price * 10) / 100;
     return (
-      <div className="column col-3 tile-content">
+      <div className="column col-3 tile-padding">
         <div className="panel">
           <div className="panel-header">
             <div className="panel-title">

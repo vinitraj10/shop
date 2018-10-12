@@ -11,8 +11,8 @@ class Mytransactions extends Component {
     const imgUrl = `http://localhost:8000${each.pic}`;
     console.log(each);
     return (
-      <div className="column col-12" key={each.id}>
-        <div className="tile">
+      <div className="column col-12 tile-padding" key={each.id}>
+        <div className="tile tile-new">
           <div className="tile-icon">
             <figure className="avatar avatar-lg">
               <Link to={`/product/${each.product_id}`}>

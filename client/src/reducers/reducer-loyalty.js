@@ -4,13 +4,13 @@ import {
 } from '../actions/types';
 
 const initialState = {
-  enrolled: false
+  enrolled: 0
 };
 
 export default function (state = initialState, action) {
   switch (action.type) {
     case ENROLL:
-      return { enrolled: true };
+      return { enrolled: action.payload };
     case UNAUTH_USER:
 			return initialState;
     default:

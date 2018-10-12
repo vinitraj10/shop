@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { loadProfile } from '../../actions/app';
 
 
 class Profile extends Component {
+  componentDidMount() {
+    this.props.loadProfile(this.props.auth.username);
+  }
   render() {
     const { profile } = this.props.profile;
     if (profile) {
@@ -35,8 +39,10 @@ class Profile extends Component {
 
 function mapStateToProps(state) {
   return {
-    profile: state.profile
+    profile: state.profile,
+    auth: state.auth
+
   };
 }
 
-export default connect(mapStateToProps)(Profile);
+export default connect(mapStateToProps, { loadProfile })(Profile);

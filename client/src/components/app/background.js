@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { enroll } from '../../actions/app';
+import { enroll, checkEnrollment } from '../../actions/app';
+import EnrollButton from './enrollbutton';
 
 class Background extends Component {
+  componentDidMount() {
+    this.props.checkEnrollment(this.props.lid, this.props.auth.username);
+  }
   enrollNow() {
     const username = localStorage.getItem('username');
     this.props.enroll(username, this.props.lid);
   }
   render() {
-    console.log(this.props);
+    const { enrolled } = this.props.loyalty;
+    console.log(enrolled);
     return (
       <React.Fragment>
         <h1 className="text-center">
@@ -19,11 +24,10 @@ class Background extends Component {
             {this.props.lpg} - {this.props.lpgd} % back in wallet
           </small>
         </h6>
-        <h1 className="text-center">
-          <button className="btn btn-default" onClick={this.enrollNow.bind(this)}>
-            Enroll Now
-          </button>
-        </h1>
+        <EnrollButton
+          enrolled={enrolled}
+          enrollNow={this.enrollNow.bind(this)}
+        />
       </React.Fragment>
     );
   }
@@ -31,8 +35,9 @@ class Background extends Component {
 
 function mapStateToProps(state) {
   return {
-    loyalty: state.loyalty
+    loyalty: state.loyalty,
+    auth: state.auth
   };
 }
 
-export default connect(mapStateToProps, { enroll })(Background);
+export default connect(mapStateToProps, { enroll, checkEnrollment })(Background);
