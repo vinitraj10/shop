@@ -232,7 +232,7 @@ def load_review(req,id):
     if req.method == 'GET':
         if(verify_auth(token)):
             product = Product.objects.get(pk=id)
-            reviews = list(Review.objects.all().values())
+            reviews = list(Review.objects.filter(product=product).values())
             for each in reviews:
                 user = User.objects.get(pk=each['user_id'])
                 profile = Profile.objects.get(user=user)

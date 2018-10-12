@@ -15,7 +15,9 @@ class Mytransactions extends Component {
         <div className="tile">
           <div className="tile-icon">
             <figure className="avatar avatar-lg">
-              <img src={imgUrl} alt="Avatar" />
+              <Link to={`/product/${each.product_id}`}>
+                <img src={imgUrl} alt="Avatar" />
+              </Link>
             </figure>
           </div>
           <div className="tile-content">

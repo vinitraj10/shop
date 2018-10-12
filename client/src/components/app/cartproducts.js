@@ -7,7 +7,7 @@ class CartProducts extends Component {
   renderEach(product) {
     const imgUrl = `http://localhost:8000${product.product_pic}`;
     return (
-      <div className="column col-12" key={product.id}>
+      <div className="column col-12 tile-content" key={product.id}>
         <div className="tile">
           <div className="tile-icon">
             <figure className="avatar avatar-lg">
@@ -19,16 +19,16 @@ class CartProducts extends Component {
               {product.product_name}
               <p className="tile-subtitle text-gray"> ₹ {product.price}</p>
             </h6>
-          </div>
-          <div className="tile-action">
-            <button
-              className="btn btn-error"
-              onClick={
-                  () => this.props.removeFromCart(product.id,this.props.username)
-                }
-            >
-              Remove
-            </button>
+            <p>
+              <button
+                className="btn btn-sm"
+                onClick={
+                    () => this.props.removeFromCart(product.id, this.props.username)
+                  }
+              >
+                Remove
+              </button>
+            </p>
           </div>
         </div>
       </div>

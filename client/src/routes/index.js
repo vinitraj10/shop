@@ -23,7 +23,7 @@ class Routes extends Component {
 				<Route path="/signup" component={Signup} />
 				<Route path="/store/:id" component={requireAuth(ViewStore)} />
 				<Route path="/cart" component={requireAuth(Cart)} />
-				<Route path="/mytransactions" component={requireAuth(Mytransactions)} />
+				<Route path="/myorders" component={requireAuth(Mytransactions)} />
 				<Route path="/add/review/:id" component={requireAuth(Review)} />
 				<Route path="/profile" component={requireAuth(Profile)} />
 				<Route path='/product/:id' component={ViewProduct} />

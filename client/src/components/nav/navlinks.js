@@ -15,7 +15,7 @@ class NavLinks extends Component {
       return (
         <section className="navbar-section">
           <ProfileLink />
-          <Link to="/mytransactions" className="btn btn-link link">
+          <Link to="/myorders" className="btn btn-link link">
             My orders
           </Link>
           <CartLink />

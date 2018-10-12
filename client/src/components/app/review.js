@@ -14,7 +14,7 @@ class Review extends Component {
     const { handleSubmit } = this.props;
     return (
       <React.Fragment>
-        <div className="column col-3"></div>
+        <div className="column col-3" />
         <div className="column col-6">
             <form onSubmit={handleSubmit(this.formSubmit.bind(this))}>
               <div className="form-group">
@@ -33,7 +33,7 @@ class Review extends Component {
               </div>
             </form>
           </div>
-        </React.Fragment>
+      </React.Fragment>
     );
   }
 }

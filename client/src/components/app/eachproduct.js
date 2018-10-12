@@ -13,7 +13,7 @@ class EachProduct extends Component {
     const imgUrl = `http://localhost:8000/media/${product.product_pic}`;
 
     return (
-      <div className="column col-4 pad-top" key={product.id}>
+      <div className="column col-3 pad-top" key={product.id}>
         <div className="card" >
           <div className="card-image">
             <img alt="img" src={imgUrl} className="img-card" />

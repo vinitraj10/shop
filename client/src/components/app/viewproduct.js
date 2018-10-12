@@ -30,24 +30,28 @@ class ViewProduct extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
   render() {
     const { data } = this.props.review;
     if (data) {
-      const newData = data.data;
-      console.log(newData);
-      return (
-        <React.Fragment>
-          <div className="centered">
-            <h1 className="text-center">Reviews</h1>
-          </div>
-          {newData.map(this.renderEach.bind(this))}
-        </React.Fragment>
-      );
-    }
+      if (data.data.length > 0) {
+        const newData = data.data;
+        console.log(newData);
+        return (
+            <React.Fragment>
+              <div className="centered">
+                <h1 className="text-center">Reviews</h1>
+              </div>
+              {newData.map(this.renderEach.bind(this))}
+            </React.Fragment>
+          );
+        }
+      }
     return (
-      <div/>
+      <div className="centered">
+        <h1 className="text-center">No Reviews Yet</h1>
+      </div>
     );
   }
 }

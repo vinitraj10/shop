@@ -7,6 +7,28 @@
   margin-top:20px;
 }
 .options {
+  display: inline-block;
+  padding: 10px;
+}
+
+.tile {
+  border: 1px solid #ddd;
+  padding: 15px;
+}
+
+.tile-content {
+  padding:10px;
+}
+
+.panel-header {
+  background: #3b5998;
+  color:#fff;
+}
+
+.panel .panel-body {
+  padding: 10px;
+}
+
+.same-line{
   display: inline;
-  padding:20px;
 }
