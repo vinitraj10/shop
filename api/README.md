@@ -3,7 +3,7 @@ This is the Instructions for Setting Up the API of the Project Shop
 
 ## Project Setup (>=python3 required)
 
-Create Virtualenvironment(Optional) and activate it
+Create Virtualenvironment <b>(Optional)</b> and activate it
 
 Creating and Activating in Windows
 ```
