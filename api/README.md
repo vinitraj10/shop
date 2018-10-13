@@ -1,7 +1,21 @@
 ## Overview
 This is the Instructions for Setting Up the API of the Project Shop
 
-## Project Setup
+## Project Setup (>=python3 required)
+
+Create Virtualenvironment(Optional) and activate it
+
+Creating and Activating in Windows
+```
+>python -m venv env
+>env\scripts\activate
+```
+Creating and Activating in Linux
+```
+>python -m venv env
+>source env/bin/activate
+```
+
 
 Installing Dependencies
 ```
