@@ -1,14 +1,14 @@
-## Instructions for Setting Up the API of the Project
+## Overview
+This is the Instructions for Setting Up the API of the Project Shop
 
-### Installing Dependencies
+### Project Setup
 
+Installing Dependencies
 ```
 (env) > pip install - r requirements\base.txt
 
 ```
-
-### Create Table For the database
-
+Intialize Database
 ```
 (env) > python manage.py makemigrations
 (env) > python manage.py migrate
