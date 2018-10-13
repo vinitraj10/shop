@@ -46,8 +46,10 @@ Credentials For Sample-User
     password: test123
 ```
 
-### Run server
+## Run server
 
 ```
 (env) > python manage.py runserver
 ```
+
+Server runs on http://localhost:8000
