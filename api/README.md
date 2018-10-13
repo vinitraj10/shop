@@ -17,25 +17,30 @@
 ### Load data in database
 
 <p>Loading Store in database</p>
+
 ```
 (env) > python manage.py runscript load_store
 ```
 
 <p>Loading product in database</p>
+
 ```
 (env) > python manage.py runscript load_product
 ```
 
 <p>Loading LoyaltyProgram in database</p>
+
 ```
 (env) > python manage.py runscript load_loyalty
 ```
 <p>Loading Sample User in database</p>
+
 ```
 (env) > python manage.py runscript load_user
 ```
 
 Credentials For Sample-User
+
 ```
     {
         username:test,
