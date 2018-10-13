@@ -1,7 +1,7 @@
 ## Overview
 This is the Instructions for Setting Up the API of the Project Shop
 
-### Project Setup
+## Project Setup
 
 Installing Dependencies
 ```
@@ -14,26 +14,26 @@ Intialize Database
 (env) > python manage.py migrate
 
 ```
-### Load data in database
+## Load data in database
 
-<p>Loading Store in database</p>
+Loading Store in database
 
 ```
 (env) > python manage.py runscript load_store
 ```
 
-<p>Loading product in database</p>
+Loading product in database
 
 ```
 (env) > python manage.py runscript load_product
 ```
 
-<p>Loading LoyaltyProgram in database</p>
+Loading LoyaltyProgram in database
 
 ```
 (env) > python manage.py runscript load_loyalty
 ```
-<p>Loading Sample User in database</p>
+Loading Sample User in database
 
 ```
 (env) > python manage.py runscript load_user
@@ -42,10 +42,8 @@ Intialize Database
 Credentials For Sample-User
 
 ```
-    {
-        username:test,
-        password:test123
-    }
+    username: test,
+    password: test123
 ```
 
 ### Run server
