@@ -47,4 +47,4 @@ def check_enrollment(req,loyality_id,username):
             else:
                 return JsonResponse({'value':0},status=200)
         return JsonResponse({'error':'Please Login first'},status=401)
-    return JsonResponse({'error':'Method Not allowed'},status=405)        
+    return JsonResponse({'error':'Method Not allowed'},status=405)      
