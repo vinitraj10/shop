@@ -3,23 +3,24 @@ Client-Side of the shop project given in Capgemini full stack hackathon challeng
 
 ## Project Setup (NodeJs reuired)
 
-**Strep-1** :- <p>Move in Directory</p>
+<p>Move in Directory</p>
+
 ```
 cd client
 ```
-**Step-2** :- <p>Install dependencies</p>
+<p>Install dependencies</p>
 
 ```
 npm install
 
 ```
-**Step-3** :- <p>Start Server</p>
+<p>Start Server</p>
 
 ```
 npm run start
 ```
 
-**Step-4** :- <p>Access Project</p>
+<p>Access Project</p>
 ```
 http://localhost:8080
 ```
