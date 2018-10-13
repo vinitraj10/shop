@@ -1,7 +1,7 @@
 ## Overview
 Client-Side of the shop project given in Capgemini full stack hackathon challenge
 
-## Project Setup (NodeJs reuired)
+## Project Setup (NodeJs required)
 
 <p>Move in Directory</p>
 
@@ -20,8 +20,5 @@ npm install
 npm run start
 ```
 
-<p>Access Project</p>
+Server runs onhttp://localhost:8080
 
-```
-http://localhost:8080
-```
