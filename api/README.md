@@ -1,38 +1,50 @@
-## This is API of the shop project given in capgemini full stack hackathon challenge
+## Instructions for Setting Up the API of the Project
 
-### Here are the instructions for setting up the API of the project
-
-<strong>Python3 required</strong>
-
-**Step-1** :- <p>Cloning the project</p>
+### Installing Dependencies
 
 ```
-git clone https://github.com/vinitraj10/shop-api api
+(env) > pip install - r requirements\base.txt
 
 ```
-**Step-2** :- <p>Installing Virtualenvironment</p>
+
+### Create Table For the database
 
 ```
-python -m venv env
-```
-
-**Step-3** :- <p>Activating the Environment</p>
-In windows
-```
-env\scripts\activate
-```
-**Step-4** :- <p>Go to api project and Install dependencies</p>
+(env) > python manage.py makemigrations
+(env) > python manage.py migrate
 
 ```
-cd api
-pip install -r requirements\base.txt
-```
-**Step-5** :- <p>Starting up the server and migrating apps</p>
+### Load data in database
 
+<p>Loading Store in database</p>
 ```
-python manage.py makemigrations
-python manage.py migrate
-python manage.py runserver
+(env) > python manage.py runscript load_store
 ```
 
-**Step-6** :- <p>Go to your browser and access it at http://localhost:8000</p>
+<p>Loading product in database</p>
+```
+(env) > python manage.py runscript load_product
+```
+
+<p>Loading LoyaltyProgram in database</p>
+```
+(env) > python manage.py runscript load_loyalty
+```
+<p>Loading Sample User in database</p>
+```
+(env) > python manage.py runscript load_user
+```
+
+Credentials For Sample-User
+```
+    {
+        username:test,
+        password:test123
+    }
+```
+
+### Run server
+
+```
+(env) > python manage.py runserver
+```
