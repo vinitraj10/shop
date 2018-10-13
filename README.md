@@ -1,6 +1,12 @@
-## This the shop project given in capgemini full stack hackathon challenge
+## Overview
+This the shop project given in capgemini full stack hackathon challenge.
+<p><b>Technology-Stack</b></p>
+<ul>
+    <li>Django</li>
+    <li>ReactJs</li>
+</ul>
+<p>The APP uses REST API architect,all the data returned by the app is in json format and mapped to the client by **ReactJS**</p>
 
-### Here are the instructions for setting up the project
 
 ## Steps to be followed
 
