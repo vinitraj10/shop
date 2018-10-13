@@ -20,5 +20,5 @@ npm install
 npm run start
 ```
 
-Server runs onhttp://localhost:8080
+Server runs on http://localhost:8080
 
