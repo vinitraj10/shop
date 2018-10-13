@@ -1,8 +1,7 @@
-## Client-Side of the shop project given in Capgemini full stack hackathon challenge
+## Overview
+Client-Side of the shop project given in Capgemini full stack hackathon challenge
 
-### Here are the instructions for setting up the client of the project
-
-<strong>Node-Js required </strong>
+## Project Setup (NodeJs reuired)
 
 **Strep-1** :- <p>Move in Directory</p>
 ```
