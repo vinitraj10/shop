@@ -5,7 +5,7 @@ This the shop project given in capgemini full stack hackathon challenge.
     <li>Django</li>
     <li>ReactJs</li>
 </ul>
-<p>The APP uses REST API architect,all the data returned by the app is in json format and mapped to the client by **ReactJS**</p>
+<p>The APP uses REST API architect,all the data returned by the app is in json format and mapped to the client by <b>ReactJS</b></p>
 
 
 ## Steps to be followed
