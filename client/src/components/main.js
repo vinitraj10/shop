@@ -1,6 +1,7 @@
 import React from 'react';
 import Routes from '../routes';
 import { Navbar } from './nav';
+import Notification from './notification';
 
 const Main = () => (
   <div className="container">
@@ -10,6 +11,7 @@ const Main = () => (
       </div>
 
     </div>
+    <Notification />
     <div className="columns app-content">
       <Routes />
     </div>

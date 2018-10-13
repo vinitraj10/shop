@@ -17,3 +17,5 @@ export const LOAD_TRANSACTIONS = 'LOAD_TRANSACTIONS';
 export const LOAD_PROFILE = 'LOAD_PROFILE';
 
 export const LOAD_REVIEW = 'LOAD_REVIEW';
+
+export const NOTIFY = 'NOTIFY';

@@ -1,7 +1,8 @@
 import axios from 'axios';
 import {
 	AUTH_USER,
-	UNAUTH_USER
+	UNAUTH_USER,
+	NOTIFY
 } from './types';
 
 const ROOT_URL = 'http://localhost:8000/accounts/api/';
@@ -19,8 +20,8 @@ export function signup(formValue, callback) {
 			dispatch({ type: AUTH_USER, payload: username });
 			callback();
 		})
-		.catch(() => {
-			//
+		.catch((error) => {
+				dispatch({ type: NOTIFY, payload: error.response.data });
 		});
 	};
 }
@@ -38,9 +39,8 @@ export function signin(formValue, callback) {
 			dispatch({ type: AUTH_USER, payload: username });
 			callback();
 		})
-		.catch(() => {
-      //console.log('Ok');
-			//dispatch({type:AUTH_ERROR,payload:'BAD LOGIN CREDENTIALS'});
+		.catch((error) => {
+				dispatch({ type: NOTIFY, payload: error.response.data });
 		});
 	};
 }

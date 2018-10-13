@@ -37,5 +37,5 @@ def signup_view(req):
                         'username':new_user.username
                     }, status=201)
         else:
-            return JsonResponse({'error':"Email or username exists"})
-    return JsonResponse({'error':'Method not allowed'})
+            return JsonResponse({'message':"Email or username exists","mode":"error"},status=405)
+    return JsonResponse({'message':'Method not allowed'},status=405)

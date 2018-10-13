@@ -26,7 +26,8 @@ def enroll_in_loyality(req):
             MyLoyality.objects.create(user=user,loyality=loyality)
             data = {
                 "message":"Enrolled Successfully",
-                "value":1
+                "value":1,
+                "mode":"success"
             }
             return JsonResponse(data,status=200)
     else:

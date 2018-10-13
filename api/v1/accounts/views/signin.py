@@ -33,9 +33,11 @@ def signin_view(req):
                 }, status=200)
         elif check_user == 'disabled':
             return JsonResponse({
-                    'error':'Account Disabled'
+                    'message':'Account Disabled',
+                    "mode":"error"
                 }, status=401)
         else:
             return JsonResponse({
-                    'error':'Invalid credentials'
+                    'message':'Invalid credentials',
+                    "mode":"error"
                 }, status=401)

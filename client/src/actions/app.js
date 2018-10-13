@@ -9,7 +9,8 @@ import {
   LOAD_CART,
   LOAD_TRANSACTIONS,
   LOAD_PROFILE,
-  LOAD_REVIEW
+  LOAD_REVIEW,
+  NOTIFY
 } from './types';
 
 import { tokenHeader } from '../utils/headers';
@@ -53,6 +54,7 @@ export function enroll(username, loyaltyId) {
     request.then((response) => {
       console.log(response);
       dispatch({ type: ENROLL, payload: response.data.value });
+      dispatch({ type: NOTIFY, payload: response.data });
     });
   };
 }

@@ -8,6 +8,7 @@ import transactionReducer from './reducer-transactions';
 import profileReducer from './reducer-profile';
 import reviewReducer from './reducer-reviews';
 import loyaltyReducer from './reducer-loyalty';
+import NotificationReducer from './reducer-notify';
 
 const rootReducer = combineReducers({
   auth: authReducer,
@@ -18,7 +19,8 @@ const rootReducer = combineReducers({
   transactions: transactionReducer,
   profile: profileReducer,
   review: reviewReducer,
-  loyalty: loyaltyReducer
+  loyalty: loyaltyReducer,
+  notification: NotificationReducer
 });
 
 
