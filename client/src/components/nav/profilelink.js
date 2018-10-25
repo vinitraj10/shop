@@ -18,9 +18,12 @@ class ProfileLink extends Component {
       }
       return (
         <Link to="/profile">
-          <figure className="avatar avatar-lg">
-            <img src={imgUrl} alt="..." />
-          </figure>
+          <div className="tile tile-centered">
+            <figure className="avatar avatar-sm">
+              <img src={imgUrl} alt="..." />
+            </figure>
+            <div className="tile-content">{this.props.auth.username}</div>
+          </div>
         </Link>
       );
     }

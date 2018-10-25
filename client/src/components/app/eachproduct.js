@@ -19,21 +19,21 @@ class EachProduct extends Component {
             <img alt="img" src={imgUrl} className="img-card" />
           </div>
           <div className="card-header">
-            <div className="card-title h5">{product.product_name}</div>
-            <div className="card-subtitle text-gray">₹ {product.price}</div>
+            <div className="card-title h5 text-center">{product.product_name}</div>
+            <div className="card-subtitle text-gray text-center">₹ {product.price}</div>
           </div>
 
           <div className="card-footer">
             <div className="options">
               <button
-                className="btn btn-primary"
+                className="btn btn-sm"
                 onClick={this.HandleaddToCart.bind(this, product.id)}
               >
                 Add to Cart
               </button>
             </div>
             <div className="options">
-              <Link to={`/product/${product.id}`} className="btn btn-primary">
+              <Link to={`/product/${product.id}`} className="btn btn-sm">
                 View Now
               </Link>
             </div>

@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import CartLink from './cartlink';
-import ProfileLink from './profilelink';
+import NavNotifications from './navnotifications';
+import DropMenu from './dropmenu';
 
 class NavLinks extends Component {
+  constructor() {
+    super();
+    this.handleLogout = this.handleLogout.bind(this);
+  }
   handleLogout() {
     this.props.logout(() => {
         this.props.history.push('/signin');
@@ -14,17 +19,9 @@ class NavLinks extends Component {
     if (authenticated) {
       return (
         <section className="navbar-section">
-          <ProfileLink />
-          <Link to="/myorders" className="btn btn-link link">
-            My orders
-          </Link>
+          <NavNotifications />
           <CartLink />
-          <a
-            onClick={this.handleLogout.bind(this)}
-            className="btn btn-link link"
-          >
-            Logout
-          </a>
+          <DropMenu logout={this.handleLogout} />
         </section>
       );
     }

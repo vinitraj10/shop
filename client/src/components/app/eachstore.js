@@ -14,13 +14,14 @@ class EachStore extends Component {
             <img alt="img" src={imgUrl} className="img-responsive" />
           </div>
           <div className="card-header">
-            <div className="card-title h5">{store.name}</div>
-          </div>
-
-          <div className="card-footer">
-            <Link to={`/store/${store.id}`} className="btn btn-primary">
-              View Shop
-            </Link>
+            <div className="card-title h5">
+              {store.name}
+              <div className="float-right">
+                <Link to={`/store/${store.id}`} className="btn btn-sm">
+                  View Shop
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>

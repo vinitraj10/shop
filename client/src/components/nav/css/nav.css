@@ -18,3 +18,19 @@ input:-webkit-autofill:active {
 .app-content {
 	padding: 20px;
 }
+
+.badge {
+	padding:10px;
+}
+a.cart-link {
+	color:#50596c;
+}
+
+.menu-container {
+	position: relative;
+}
+
+.menu {
+	position: absolute;
+	right:0;
+}

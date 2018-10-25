@@ -9,7 +9,7 @@ class CartProducts extends Component {
     console.log(product)
     const imgUrl = `http://localhost:8000${product.product_pic}`;
     return (
-      <div className="column col-12 tile-content" key={product.id}>
+      <div className="column col-12 tile-padding" key={product.id}>
         <div className="tile tile-new">
           <div className="tile-icon">
             <figure className="avatar avatar-lg">

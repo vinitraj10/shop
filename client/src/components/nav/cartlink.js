@@ -19,8 +19,8 @@ class CartLink extends Component {
 
     return (
       <span className="badge" data-badge={count}>
-        <Link to="/cart" className="btn btn-link link">
-          Cart
+        <Link to="/cart" className="cart-link">
+          <i className="fas fa-shopping-cart" />
         </Link>
       </span>
     );
