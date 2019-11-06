@@ -2,7 +2,7 @@ import os
 from django.core.files import File
 from v1.app.models import Store
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BASE_DIR+= "\\fixtures\\test-images"
+BASE_DIR+= "/fixtures/test-images"
 
 data = [
             {
@@ -52,7 +52,7 @@ def run(*args):
     for each in data:
         name = each['name']
         picture = each['picture']
-        dir = BASE_DIR + "\\" + picture
+        dir = BASE_DIR + "/" + picture
         description = each['description']
         store = Store()
         store.name = name

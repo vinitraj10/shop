@@ -5,8 +5,10 @@ from v1.app.models import (
     Product
 )
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BASE_DIR+= "\\fixtures\\test-images"
-
+# for windows
+#BASE_DIR+= "\\fixtures\\test-images"
+# for linux
+BASE_DIR+= "/fixtures/test-images"
 
 products = [
     {
@@ -47,7 +49,9 @@ def run(*args):
     for each in products:
         product_name = each['product_name']
         product_pic = each['product_pic']
-        dir = BASE_DIR + '\\' + product_pic
+        # for windows
+        # dir = BASE_DIR + '\\' + product_pic
+        dir = BASE_DIR + '/' + product_pic
         price = each['price']
         store = Store.objects.get(pk=each['store'])
         description = each['description']
