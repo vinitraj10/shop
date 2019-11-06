@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import ProfileLink from './profilelink';
 
 class DropMenu extends Component {
@@ -34,7 +34,9 @@ class DropMenu extends Component {
             <li className="menu-item">
               <ProfileLink />
             </li>
-            <li className="menu-item"><a href="#menus">My orders</a></li>
+            <li className="menu-item">
+              <Link to="/myorders">My orders</Link>
+            </li>
             <li className="menu-item">
               <a onClick={this.props.logout}>Logout</a>
             </li>
