@@ -12,7 +12,7 @@ const Main = () => (
 
     </div>
     <Notification />
-    <div className="columns app-content">
+    <div className="columns app-content" style={{marginTop:100}}>
       <Routes />
     </div>
   </div>
