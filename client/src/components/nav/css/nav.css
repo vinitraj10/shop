@@ -14,7 +14,10 @@
 .link {
 	margin-left:15px;
 }
-
+.brand {
+	font-family: cursive;
+	font-weight: 400;
+}
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,

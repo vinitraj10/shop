@@ -4,14 +4,13 @@ import { Link } from 'react-router-dom';
 import { signout } from '../../actions/auth';
 import NavLinks from './navlinks';
 import './css/nav.css';
-
 class Navbar extends Component {
   render() {
     const { authenticated } = this.props.auth;
     return (
       <header className="navbar">
         <section className="navbar-section">
-          <Link to="/" className="navbar-brand">CPGSHOP</Link>
+          <Link to="/" className="navbar-brand brand">AllInOne</Link>
         </section>
         <section className="navbar-center">
           {/*<div className="input-group input-inline">
