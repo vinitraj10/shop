@@ -38,19 +38,6 @@
 }
 
 
-a {
-  color: #00d09c !important;
-}
-
-.btn-primary {
-  background-color: #00d09c !important;
-  border-color: #00d09c !important;
-}
-.btn {
-  border-color: #00d09c !important;
-}
-
-
 .badge:not([data-badge])::after, .badge[data-badge]::after {
   background: #00d09c !important;
 }
